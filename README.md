@@ -10,6 +10,8 @@ Specifically, it'll search for a movie title, and if found on Rotten Tomatoes, r
 
 ## Usage
 
+Running this code
+
 ```
 const fetchRTdata = require('./index');
 
@@ -21,13 +23,13 @@ const go = async () => {
 go();
 ```
 
-Running this code will return
+will return
 
 ```
-{ meterScore: '93',
+{ meterScore: '88',
   consensus:
-   'Kusama: Infinity shines a richly deserved spotlight on its subject\'s brilliant work while opening a fascinating - albeit necessarily incomplete - window into her personal life.',
-  url: 'https://www.rottentomatoes.com/m/kusama_infinity' }
+   'Thanks to the Wachowskis\' imaginative vision, The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
+  url: 'https://www.rottentomatoes.com/m/matrix' }
 ```
 
 ## Notes
