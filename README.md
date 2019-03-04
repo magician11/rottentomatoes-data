@@ -16,7 +16,7 @@ Running this code
 const fetchRTdata = require('./index');
 
 const go = async () => {
-  const data = await fetchRTdata('Kusama: Infinity');
+  const data = await fetchRTdata('The Matrix');
   console.log(data);
 };
 
