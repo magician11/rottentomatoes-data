@@ -2,6 +2,12 @@
 
 Fetch Rotten Tomatoes data for a movie (if available).
 
+Specifically, it'll search for a movie title, and if found on Rotten Tomatoes, return
+
+- the tomato meter score (as a percentage)
+- the critics concensus
+- the URL of the movie on Rotten Tomatoes
+
 ## Usage
 
 ```
