@@ -54,25 +54,3 @@ const fetchRottenTomatoesData = async movieTitle => {
 };
 
 module.exports = fetchRottenTomatoesData;
-
-// const go = async () => {
-//   try {
-//     // const bestMovieEver = await lw5('Kusama: Infinity');
-//     // console.log(bestMovieEver);
-//     const data = await axios(
-//       'https://www.rottentomatoes.com/api/private/v2.0/search/',
-//       {
-//         params: {
-//           limit: 1,
-//           q: 'The Matrix'
-//         }
-//       }
-//     );
-
-//     console.log(JSON.stringify(data.data, null, 2));
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// go();
