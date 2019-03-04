@@ -1,0 +1,27 @@
+{
+  "name": "rottentomatoes-data",
+  "version": "1.0.1",
+  "description": "Fetch Rotten Tomatoes data for a movie (if available).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magician11/rottentomatoes-data.git"
+  },
+  "keywords": [
+    "rotten-tomatoes",
+    "movies"
+  ],
+  "author": "Andrew Golightly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magician11/rottentomatoes-data/issues"
+  },
+  "homepage": "https://github.com/magician11/rottentomatoes-data#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
