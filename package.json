@@ -1,6 +1,6 @@
 {
   "name": "rottentomatoes-data",
-  "version": "1.0.1",
+  "version": "1.4.6",
   "description": "Fetch Rotten Tomatoes data for a movie (if available).",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/magician11/rottentomatoes-data#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.2"
   }
 }

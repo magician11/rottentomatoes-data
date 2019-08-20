@@ -13,14 +13,10 @@ const parseHTML = async url => {
 const fetchRottenTomatoesData = async movieTitle => {
   try {
     let $ = await parseHTML(
-      `https://www.google.com/search?as_q=rotten+tomatoes+${movieTitle}`
+      `https://www.rottentomatoes.com/search/?search=+${movieTitle}`
     );
 
-    // first find the Rotten Tomatoes URL on google for this movie
-    const rottenTomatoesMatch = $('#search .g cite')
-      .first()
-      .text()
-      .match(/(https:\/\/www\.rottentomatoes\.com\/m.+)/);
+    const movieData = $.html().match(/movies":(.+),"tvCount"/);
 
     // the data we are aiming to retrieve from Rotten Tomatoes
     const rottenTomatoesData = {
@@ -29,12 +25,12 @@ const fetchRottenTomatoesData = async movieTitle => {
       url: ''
     };
 
-    /* 
-    If we have found a valid Rotten Tomatoes URL from Google, 
-    then go to that page and fetch some data
-    */
-    if (rottenTomatoesMatch) {
-      const rottenTomatoesUrl = rottenTomatoesMatch[1];
+    if (movieData) {
+      // first find the Rotten Tomatoes URL on google for this movie
+      const rottenTomatoesUrl = `https://www.rottentomatoes.com${
+        JSON.parse(movieData[1])[0].url
+      }`;
+
       $ = await parseHTML(rottenTomatoesUrl);
 
       rottenTomatoesData.meterScore = $('#tomato_meter_link')
