@@ -9,6 +9,7 @@ Specifically, it'll search for a movie title, and if found on Rotten Tomatoes, r
 - the URL of the movie on Rotten Tomatoes
 - the name of the movie
 - the year of the movie
+- the principal actors
 
 ## Installing
 
@@ -37,7 +38,8 @@ will output
   year: 1999,
   url: 'https://www.rottentomatoes.com/m/matrix',
   consensus:
-   'Thanks to the Wachowskis\' imaginative vision, The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.' }
+   'Thanks to the Wachowskis\' imaginative vision, The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
+  actors: [ 'Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss' ] }
 ```
 
 ## Notes

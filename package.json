@@ -1,6 +1,6 @@
 {
   "name": "rottentomatoes-data",
-  "version": "1.6.4",
+  "version": "1.7.3",
   "description": "Fetch Rotten Tomatoes data for a movie (if available).",
   "main": "index.js",
   "scripts": {

@@ -16,13 +16,16 @@ const fetchRottenTomatoesData = async movieTitle => {
 
       const response = await axios(rottenTomatoesUrl);
       const $ = await cheerio.load(response.data);
+      const actors = movie.subline.split(', ');
+      actors.pop(); // remove last empty element
 
       return {
         name: movie.name,
         meterScore: movie.meterScore,
         year: movie.year,
         url: rottenTomatoesUrl,
-        consensus: $('.mop-ratings-wrap__text--concensus').text()
+        consensus: $('.mop-ratings-wrap__text--concensus').text(),
+        actors
       };
     }
 
