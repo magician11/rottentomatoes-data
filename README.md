@@ -10,12 +10,16 @@ Specifically, it'll search for a movie title, and if found on Rotten Tomatoes, r
 - the name of the movie
 - the year of the movie
 
+## Installing
+
+`npm install rottentomatoes-data`
+
 ## Usage
 
 Running this code
 
 ```
-const fetchRTdata = require('./index');
+const fetchRTdata = require('rottentomatoes-data');
 
 const go = async () => {
   const data = await fetchRTdata('The Matrix');
@@ -25,7 +29,7 @@ const go = async () => {
 go();
 ```
 
-will return
+will output
 
 ```
 { name: 'The Matrix',
