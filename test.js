@@ -1,8 +1,9 @@
+const axios = require('axios');
 const fetchRTdata = require('./index');
 
 const go = async () => {
   try {
-    data = await fetchRTdata('An Inconvenient Truth');
+    const data = await fetchRTdata('The Matrix');
     console.log(data);
   } catch (error) {
     console.log(error);
