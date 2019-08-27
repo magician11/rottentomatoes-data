@@ -5,6 +5,7 @@ Fetch Rotten Tomatoes data for a movie (if available).
 Specifically, it'll search for a movie title, and if found on Rotten Tomatoes, return:
 
 - the tomato meter score (as a percentage)
+- the tomato meter class
 - the critics concensus
 - the URL of the movie on Rotten Tomatoes
 - the name of the movie
@@ -33,14 +34,25 @@ go();
 will output
 
 ```
-{ name: 'The Matrix',
-  meterScore: 88,
-  year: 1999,
-  url: 'https://www.rottentomatoes.com/m/matrix',
-  consensus:
-   'Thanks to the Wachowskis\' imaginative vision, The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
-  actors: [ 'Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss' ] }
+{ ok: true,
+  movie:
+   { name: 'The Matrix',
+     meterScore: 88,
+     meterClass: 'certified_fresh',
+     year: 1999,
+     url: 'https://www.rottentomatoes.com/m/matrix',
+     consensus:
+      'Thanks to the Wachowskis\' imaginative vision, The Matrix is a smartly crafted combination of spectacular action and groundbreaking special effects.',
+     actors: [ 'Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss' ] } }
 ```
+
+An error response will look like
+
+```
+{ ok: false, error: 'movie_not_found' }
+```
+
+So check the `ok` parameter when processing the response.
 
 ## Notes
 

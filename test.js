@@ -1,19 +1,29 @@
 const axios = require('axios');
 const fetchRTdata = require('./index');
 
-const go = async () => {
+const go = async movieTitle => {
   try {
-    const data = await fetchRTdata('the matrix');
-    console.log(
-      `The Rotten Tomatoes score for ${data.name} (${data.year}) is ${
-        data.meterScore
-      }%`
-    );
-    console.log(`Critics Consensus: ${data.consensus}`);
-    console.log(`Actors: ${data.actors}`);
+    const data = await fetchRTdata(movieTitle);
+
+    if (data.ok) {
+      const { movie } = data;
+
+      console.log(
+        `The Rotten Tomatoes score for ${movie.name} (${movie.year}) is ${movie.meterScore}% (${movie.meterClass})`
+      );
+      console.log(`Critics Consensus: ${movie.consensus}`);
+      console.log(`Actors: ${movie.actors.join(', ')}`);
+      console.log(`Webpage: ${movie.url}`);
+    } else {
+      console.log(
+        `Something went wrong when looking up the movie "${movieTitle}": ${data.error}`
+      );
+    }
   } catch (error) {
     console.log(error);
   }
 };
 
-go();
+const movieTitle = 'The Matrix';
+
+go(movieTitle);

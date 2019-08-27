@@ -9,7 +9,7 @@ const fetchRottenTomatoesData = async movieTitle => {
         .join('+')}`
     );
 
-    if (res.data.movies.length > 0) {
+    if (res.data.movieCount > 0) {
       const movie = res.data.movies[0];
 
       const rottenTomatoesUrl = `https://www.rottentomatoes.com${movie.url}`;
@@ -19,17 +19,23 @@ const fetchRottenTomatoesData = async movieTitle => {
       const actors = movie.subline.split(', ');
       actors.pop(); // remove last empty element
 
+      const { name, meterScore, meterClass, year } = movie;
+
       return {
-        name: movie.name,
-        meterScore: movie.meterScore,
-        year: movie.year,
-        url: rottenTomatoesUrl,
-        consensus: $('.mop-ratings-wrap__text--concensus').text(),
-        actors
+        ok: true,
+        movie: {
+          name,
+          meterScore,
+          meterClass,
+          year,
+          url: rottenTomatoesUrl,
+          consensus: $('.mop-ratings-wrap__text--concensus').text(),
+          actors
+        }
       };
     }
 
-    return {};
+    return { ok: false, error: 'movie_not_found' };
   } catch (error) {
     throw error;
   }
