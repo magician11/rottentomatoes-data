@@ -25,7 +25,7 @@ const fetchRottenTomatoesData = async movieTitle => {
         ok: true,
         movie: {
           name,
-          meterScore,
+          meterScore: meterScore ? meterScore : '',
           meterClass,
           year,
           url: rottenTomatoesUrl,

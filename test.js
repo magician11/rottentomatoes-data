@@ -7,7 +7,7 @@ const go = async movieTitle => {
 
     if (data.ok) {
       const { movie } = data;
-
+      console.log(movie);
       console.log(
         `The Rotten Tomatoes score for ${movie.name} (${movie.year}) is ${movie.meterScore}% (${movie.meterClass})`
       );
@@ -24,6 +24,6 @@ const go = async movieTitle => {
   }
 };
 
-const movieTitle = 'The Matrix';
+const movieTitle = 'Matrix';
 
 go(movieTitle);
